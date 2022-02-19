@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XPVGSKCWRK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XPVGSKCWRK');
+</script>
+ 
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule
+src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
+</script>
+ 
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  
+     
+
+    <title>Roomify.com</title>
+</head>
+
+<body>
+
+
+ 
+
+
+  <nav  style=" border-radius: 4px; border: 2px; font-family: 'Ubuntu', sans-serif; color:black; font-weight: bold; text-decoration:none; margin-bottom: 25pxpx; font-size: 25px;"
+  >
+    <div class="container-fluid">
+       <img src="assets/Interior logo.webp" alt="logo" width="50" height="44" class="d-inline-block align-text-top">
+        Roomify
+    
+    </div>
+  </nav>
+
+  <h1 style=" border-radius: 4px; border: 2px; border-color: black; font-family: 'Ubuntu', sans-serif; color:black;  text-decoration:none;   font-size: 15px;"> Inovating the Interior Design </h1>
+
+  
+  <div style= " margin-bottom:12px; padding:2px; background-color:#fad6af; color:white; border:2px; border-radius:12px; border-color: black;">
+    <h5 style=" color:black;  background-color:white; border-radius:5px; height:20px ;position: relative;text-align: center;">Tutorial</h5>
+   <h5> Use the  <img src="assets/newArbtn.webp" height="15px" width="15px">button to view 3d Wallpapers on your walls through googleAr,Or just rotate them on Virtual floor. </h5>
+   
+  <button style=" object-fit: contain;
+  height:  22px; width: 22px; border-radius:  70px; border:10px ; position: absolute; top: 175px; right: 12px; padding:2px;" onclick="this.parentElement.style.display = 'none'"> X </button>
+  </div>
+
+
+
+  <model-viewer style=" margin-top: 25px; margin-bottom: 15px; border-width:15px; border: 15px; border:solid; border-radius:15px; border-color:bisque ; "
+  
+   src="assets/m1.glb" poster='assets/m1.webp' 
+
+  ar ar-modes=" scene-viewer quick-look"  ar-placement="wall" camera-controls environment-image="neutral"   skybox-image="assets/photo_studio_london_hall_1k.hdr"  shadow-intensity="0" auto-rotate  camera-orbit="auto" shadow-softness="0" camera-target="0.0m -0.00m -0.13m"   
+    >
+</div> 
+<div class="progress-bar " slot="progress-bar">
+    <div class="update-bar"></div>
+</div>
+<button slot="ar-button" style=" object-fit: contain;
+ height:  80px; width: 80px; border-radius:  70px; border:10px ; position: absolute; top: 16px; right: 16px; padding:2px; background-color: whitesmoke;  "> 
+  <img src="assets/newArbtn.webp" alt="" height="70px" width="70px" margin-top = "2px" >
+
+  
+
+</button>
+    
+
+
+<a href="https://wa.me/917018523386" style=" border-radius: 15px; border: 2px;  position: absolute; top: 12px; left: 16px; font-family: 'Ubuntu', sans-serif; color:black; font-weight: bold; text-decoration:none;">
+   <img style = ' height: 90px; width: "200px ";  background-blend-mode:screen;'src="assets/BuyOption.webp" alt="Buy Now ">
+  
+
+</a>
+</div>
+       
+      
+      
+        <div class="slider">
+          <div class="slides">
+            <button class="slide selected" onclick="switchSrc(this, 'm1')" style="background-image: url('assets/m1.webp');">
+      
+           
+      
+            </button><button class="slide" onclick="switchSrc(this, 'm2')" style="background-image: url('assets/m2.webp');">
+            
+            </button><button class="slide" onclick="switchSrc(this, 'm3')" style="background-image: url('assets/m3.webp');">
+         
+            </button><button class="slide" onclick="switchSrc(this, 'm4')" style="background-image: url('assets/m4.webp');">    
+           </button>
+
+          </button><button class="slide" onclick="switchSrc(this, 'm5')" style="background-image: url('assets/m5.webp');">    
+          </button>
+
+          </button><button class="slide" onclick="switchSrc(this, 'm6')" style="background-image: url('assets/m6.webp');">    
+           </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm7')" style="background-image: url('assets/m7.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm8')" style="background-image: url('assets/m8.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm9')" style="background-image: url('assets/m9.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm10')" style="background-image: url('assets/m10.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm11')" style="background-image: url('assets/m11.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm12')" style="background-image: url('assets/m12.webp');">     
+         </button>
+      
+        
+        </div>
+        </div>
+      </model-viewer>
+      
+      <script type="module">
+        const modelViewer = document.querySelector("model-viewer");
+      
+        window.switchSrc = (element, name) => {
+          const base = "assets/" + name;
+          modelViewer.src = base + '.glb';
+
+        
+          
+          modelViewer.poster = base+'.webp';
+         
+          const slides = document.querySelectorAll(".slide");
+          slides.forEach((element) => {element.classList.remove("selected");});
+          element.classList.add("selected");
+        };
+      
+        document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+          // Keep slider interactions from affecting the XR scene.
+          ev.preventDefault();
+        });
+      </script>
+      
+      <style>
+        /* This keeps child nodes hidden while the element loads */
+        :not(:defined) > * {
+          display: none;
+        }
+     
+     
+       
+      
+        @keyframes circle {
+          from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+          to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+        }
+      
+        @keyframes elongate {
+          from { transform: translateX(100px); }
+          to   { transform: translateX(-100px); }
+        }
+      
+        model-viewer > #ar-prompt {
+          position: absolute;
+          left: 50%;
+          bottom: 175px;
+          animation: elongate 2s infinite ease-in-out alternate;
+          display: none;
+        }
+      
+        model-viewer[ar-status="session-started"] > #ar-prompt {
+          display: block;
+        }
+      
+   
+      
+      
+      
+      
+        .slider {
+          width: 100%;
+          text-align: center;
+          overflow: hidden;
+          position: absolute;
+          bottom: 16px;
+        }
+      
+        .slides {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+        }
+      
+        .slide {
+          scroll-snap-align: start;
+          flex-shrink: 0;
+          width: 100px;
+          height: 100px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color:bisque;
+          margin-right: 10px;
+          border-radius: 10px;
+          border: none;
+          display: flex;
+        }
+      
+        .slide.selected {
+          border: 4px solid gold;
+        }
+      
+        .slide:focus {
+          outline: none;
+        }
+      
+        .slide:focus-visible {
+          outline: 4px solid gold;
+        }
+
+     
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+
+
+
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  model-viewer > #ar-failure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 175px;
+    display: none;
+  }
+
+  model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+    display: block;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:bisque;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 4px solid bisque;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 4px solid bisque ;
+  }
+
+</style>
+      
+      </style>
+       <style>
+        model-viewer{
+          width: 100%;
+          min-height:600px;
+         
+        }
+      </style>
+      
+  <div>
+    <footer>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <p style=" font-weight:bold; color:black;  background-color:white; border-radius:5px; height:20px ;position: relative;text-align: center;">About Us & PrivacyPolicy</p>
+  
+           <h6 style=" color:white;text-decoration: dashed; font-size: 13px;">
+            Our website Handels immersive computing and shows 3d Wallpapers from our shop to your walls.</h6>
+            <p>--click here to know more-- </p>
+           
+          </div>
+          <div class="flip-card-back">
+            <p> we have tried to showcase our 3d Wallpapers  by the medium of Roomify.com a website made by amazing people like you , who want to decorate there Houses Passionately  .
+               you can also visit our social media handels for more interesting stuff<p>
+  
+            <ul>
+             <li>
+              <a href="https://www.instagram.com/prokarticksharma/"> Instagram</a>
+  
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </div>
+      </footer>
+ <style>
+   
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 7rem;
+ 
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+  background-color:#7900FF; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+
+ 
+  margin-top: 1rem;
+}
+
+
+
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+ </style>
+  </div>
+   
+</body>
+</html>
