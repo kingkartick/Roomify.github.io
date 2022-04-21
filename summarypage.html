@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrderSummary</title>
+   
+</head>
+<body  id="bigBody" style="background-image:url(./assets/backImage.jpg);
+             width:100%;
+            height:100vh;
+            background-size: cover;
+            background-repeat: no-repeat;">
+      <h1 style="padding:1rem; font-weight: bold; font-family: sans-serif; color: aliceblue;">
+        Order Summary Page
+
+      </h1>
+      <div  style="padding:1rem;   font-size:28px; font-weight:bold; font-family:sans-serif; color: aliceblue;"> 
+        <img style="border-radius:100px; position:relative; top: 12px;"  src="./assets/png cart image.jpg" height="60px" width="60px" alt="cart"> 
+        your Cart ! .
+      </div>
+     
+      <div id="cart" style="width:90%; height:auto; padding-left:1rem; background-color: aliceblue;">
+       
+      </div>
+    <main style="height:auto;width:75%;margin:15%;">
+        
+        <div style="padding:1rem;">
+            <button style="height:2rem;width:100%;" onclick="location.href='./buyPage.html'">
+                create a new Order 
+            </button>
+        </div>
+        <div style="color: aliceblue;">
+            Oeder Summary for 
+            <div style="height:2rem;width:100%;">
+                <input style="height:2rem; width:100%;" id="Contact" type="number" placeholder="your Number">
+                <button style="height:2rem; width:100%;" id="submit">check order</button>
+                <div style="height:auto;width:75%;  margin:35px; border-color: aliceblue; border: 200px;"   id="fireData">
+                 <div style="padding:1rem;   font-size:18px; font-weight:bold; font-family:sans-serif; color: aliceblue;">
+                  Order summary for =
+                </div>
+                </div>
+               
+            </div> 
+            
+            <script type="module" > 
+              const cart = document.getElementById("cart");
+             
+              const cartElement = document.getElementById("cartItems");
+              const cartlist = localStorage.getItem("chosenDesigns");
+              const cartArray = JSON.parse(cartlist);
+              console.log(cartArray);
+              console.log(cartArray.length);
+              var i = 0;
+              for(const ele of cartArray){
+                var img =document.createElement("IMG");
+                img.style.height="95px";
+                img.style.width="85px";
+                img.style.padding="10px"
+                img.setAttribute("src",ele);
+                cart.append(img);  
+              }
+           
+             
+              
+
+           
+        
+              import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+              import { getDatabase ,ref,onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+                  
+                const firebaseConfig = {
+                           apiKey: "AIzaSyDnJvHGINzFRY4Tbv3KPUL5G7-RPasbK9Q",
+                           authDomain: "roomy2-8afff.firebaseapp.com",
+                           databaseURL: "https://roomy2-8afff-default-rtdb.asia-southeast1.firebasedatabase.app",
+                           projectId: "roomy2-8afff",
+                           storageBucket: "roomy2-8afff.appspot.com",
+                           messagingSenderId: "519049376654",
+                           appId: "1:519049376654:web:c50a78b952cbd22f66aadf",
+                          measurementId: "G-F1XQKD5GMX"
+                                     };
+                      
+                      // Initialize Firebase
+                      
+                      
+                     let clk = document.getElementById("submit");
+                     clk.addEventListener('click',
+                     function showData(){
+                         if(document.getElementById("Contact")){var num= document.getElementById("Contact").value;} else {console.log("error")}
+                         const app = initializeApp(firebaseConfig);
+                         const db = getDatabase(app);
+                         const reference = ref(db,'Users/');
+                         onValue(reference,(snapshot) => {
+                          var  data = snapshot.child(num).val();
+                          var Keys = Object.keys(data);
+                          console.log(Keys.length);
+                          var i = 0 ;
+                          const orderlist = document.getElementById("fireData");
+                          const bigbody = document.getElementById("bigBody");
+
+                         for(const key of Keys){
+                            if(key.includes("name")){
+                              
+                             var Name =(key+"="+data[key])+",";
+                             orderlist.append(Name);
+                             
+                           }
+                           
+                           if (key.includes("City")){
+                             var City = (key+"="+data[key])+",";
+                             orderlist.append(City);
+                            
+                           }
+                             if(key.includes("wall")){
+                                var currentWall = key;
+                                orderlist.append(currentWall);
+                               var walldata = data[key];
+                               const diver = document.createElement("div");
+                               const order = document.createElement("ol");
+                               for(var ele in walldata){
+                                 if(ele.includes("Texture") && walldata[ele] !== "notSelected"){
+                                  
+                                    var img =document.createElement("IMG");
+                                    img.setAttribute("class",i+"texture");
+                                    img.style.height="95px";
+                                    img.style.width="85px";
+                                    img.style.padding="10px";
+                                    img.setAttribute("src",walldata[ele]);
+                                    order.append(img);
+                                    
+                                 
+                                 }
+                                 
+                                  var atr = (ele+"="+walldata[ele]);
+                                  const listing = document.createElement("li");
+                                  listing.append(atr);
+                                  order.append(listing); 
+                                  diver.append(order)
+                                  
+                               }   
+                                 orderlist.append(diver);
+                                 bigbody.style.height="1500px";
+
+                             }
+                             
+                         } 
+                           
+                                      
+                         })
+    
+        })
+    
+                     
+    
+        
+           
+            </script>
+        </div>
+    </main>
+</body>
+</html>
