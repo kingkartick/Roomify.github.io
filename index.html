@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XPVGSKCWRK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XPVGSKCWRK');
+</script>
+ 
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule
+src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
+</script>
+ 
+   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  
+     
+
+    <title>Roomify.com</title>
+  
+</head>
+
+
+<body id="bigBody" style=" overflow: hidden; width:97%; margin:4px;" >
+  
+  <div id="loadin" style=" display: flex; justify-content: center; align-items: center; width:84%; padding: 22px; height:100vh
+  ; flex-direction: column; ">
+   <p  style="font-size:18px; font-weight:bold; font-family: 'Source Sans Pro', sans-serif;  color:black"> Roomify.in</p> 
+   <p  style=" font-family: 'Source Sans Pro', sans-serif;  color:black">
+           Making Walls look Good ! .
+       </p>
+       <object id="object1" type="image/svg+xml" data="./assets/mainLoader.svg"></object>
+      
+   </div> 
+ 
+
+
+  <style>
+     .spacer{
+           aspect-ratio:9/17;
+           width: 100%;
+           background-size:cover;
+           background-repeat: no-repeat;
+           background-position:center;
+          
+          
+       }
+       .layer{
+           background-image: url(./assets/blob-scene-haikei\ \(1\).svg);
+       }
+  </style>
+
+
+ <main id="bagBody" style="visibility:hidden;">
+  <div id="user" style="height:50px; width:50px;">
+    <img id="userlogo" style="height: 35px;
+    width: 35px;
+    border-radius: 35px;
+    position: absolute;
+    top: 80px;
+    right: 40px;" src="" alt="">
+    <h4 id="username" style="color: black; position: absolute;
+    color: #64748b;
+position: absolute;
+top: 104px;
+right: 9px;
+font-size: 11px;"></h4>
+
+</div>
+
+
+ <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDnJvHGINzFRY4Tbv3KPUL5G7-RPasbK9Q",
+      authDomain: "roomy2-8afff.firebaseapp.com",
+      databaseURL: "https://roomy2-8afff-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "roomy2-8afff",
+      storageBucket: "roomy2-8afff.appspot.com",
+      messagingSenderId: "519049376654",
+      appId: "1:519049376654:web:c50a78b952cbd22f66aadf",
+      measurementId: "G-F1XQKD5GMX"
+    };
+  
+    // Initialize Firebase
+    function signIn(){
+      const app = initializeApp(firebaseConfig);
+    const userImage = document.getElementById("userlogo");
+    const userName = document.getElementById("username");
+     
+    
+
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+
+    signInWithPopup(auth, provider)
+    .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+     const credential = GoogleAuthProvider.credentialFromResult(result);
+       const token = credential.accessToken;
+      // The signed-in user info.
+       const user = result.user;
+       console.log(user.displayName);
+       console.log(user.photoURL);
+       const userphoto = user.photoURL;
+       const username = user.displayName;
+       const email = user.email;
+       userImage.src=userphoto;
+       userName.innerText=username;
+       localStorage.setItem("userImage",userphoto);
+       localStorage.setItem("userName",username);
+       localStorage.setItem("email",email);
+
+
+
+    
+       }).catch((error) => {
+        // Handle Errors here.
+           const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+          const email = error.email;
+           // The AuthCredential type that was used.
+           const credential = GoogleAuthProvider.credentialFromError(error);
+     
+          });
+
+    }
+    
+
+     const bigBody = document.getElementById("bigBody");
+     const loader = document.getElementById("loadin");
+     const bagBody = document.getElementById("bagBody");
+     
+     window.onload= function loding(){
+       setTimeout(function() 
+            {bigBody.style.overflow="visible";
+             bigBody.classList.add("layer");
+       bigBody.classList.add("spacer"); 
+       
+       loader.style.opacity="0";
+       loader.style.pointerEvents="none";
+       loader.style.height="0px";
+      
+       bagBody.style.visibility="visible";
+       signIn.call();
+       
+      
+     }, 4000);   
+       
+     }
+  
+     </script>
+
+
+  <nav  style=" border-radius: 4px; border: 2px; font-family: 'Ubuntu', sans-serif; color:black; font-weight: bold; text-decoration:none; margin-bottom: 25pxpx; font-size: 25px;"
+  >
+    <div class="container-fluid">
+       <img src="assets/Interior logo.webp" alt="logo" width="50" height="44" class="d-inline-block align-text-top">
+        Roomify
+    
+    </div>
+  </nav>
+
+  <h1 style=" border-radius: 4px; border: 2px; border-color: black; font-family: 'Ubuntu', sans-serif; color:black;  text-decoration:none;   font-size: 15px;"> Inovating the Interior Design </h1>
+
+
+
+
+
+  <model-viewer  id='viewer' style=" margin-top: 25px; margin-bottom: 15px; border-width:15px; border: 15px;  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; "
+  
+   src="assets/m1.glb" 
+   ios-src="assets/m1.usdz"
+   poster="assets/m1002.webp"
+
+  ar ar-modes=" scene-viewer quick-look"  ar-placement="wall" loading="eager";  reveal="manual" camera-controls   skybox-image="assets/photo_studio_london_hall_1k.hdr"   shadow-intensity="0" interaction-prompt="auto" interaction-prompt-threshold="20"  shadow-softness="0" camera-target="0.0m -0.00m -0.13m"   
+    >
+</div> 
+
+
+  <a  id='orderBtn'style="height:55px; width:200px;  border:10px ; position: absolute;
+  top: 65px;
+  left: 1px;
+   padding:2px;   "href="./summarypage.html"> <img  style='height:100%; width:100%;'src="./assets/orderBtn.png"  alt=""> </a>
+
+
+  <button id="addCart" style=" height:65px; width:65px;  border:solid; border-color:#51cccc!important;  background-color:rgb(255, 255, 255); border-radius:  76px;     position: absolute;
+  
+  top: 60px;
+  left: 197px;  "> 
+    <svg id="cartSvg" width="100%" height="100%" viewBox="0 0 638 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="638" height="568" fill="none"/>
+      <g id="Frame 1">
+      <rect width="638" height="568" fill="none"/>
+      <g id="addCartmax 1">
+      <g id="cartyellow" filter="url(#filter0_f_0_1)">
+      <path id="Vector" d="M291 166H136L172 355H474L503 337L512 309V291L491 300L452 315L400 309L352 291L324 261L303 226L296 200L291 166Z" fill="#FFC107"/>
+      <path id="Vector_2" d="M136 161.5H130.562L131.58 166.842L167.579 355.842L168.276 359.5H172H474H475.283L476.373 358.823L505.373 340.823L506.778 339.951L507.284 338.377L516.284 310.377L516.5 309.705V309V291V284.176L510.227 286.864L489.305 295.83L451.417 310.403L401.064 304.593L354.569 287.157L327.614 258.277L307.182 224.223L300.414 199.085L295.452 165.345L294.887 161.5H291H136Z" stroke="#FFC107" stroke-width="9"/>
+      </g>
+      <g id="kathi" filter="url(#filter1_i_0_1)">
+      <path id="Vector_3" d="M51 101H116L179 380L199 410L220 420H487" stroke="#455A64" stroke-width="20" stroke-linecap="round"/>
+      </g>
+      <path id="greenCircle" d="M440.5 283C504.841 283 557 230.393 557 165.5C557 100.607 504.841 48 440.5 48C376.159 48 324 100.607 324 165.5C324 230.393 376.159 283 440.5 283Z" fill="#4CAF50"/>
+      <path id="tick" d="M380 173.693L417.5 208L500 125" stroke="#4CAF50" stroke-width="16" stroke-linecap="round"/>
+      <path id="cross2" d="M439.187 121.81L440.81 207.813" stroke="#E5E5E5" stroke-width="20" stroke-linecap="round"/>
+      <path id="cross1" d="M398.096 165.097L482.097 165.904" stroke="#E5E5E5" stroke-width="20" stroke-linecap="round"/>
+      <g id="wheel3" filter="url(#filter2_i_0_1)">
+      <path id="Vector_4" d="M279 507C279 536.271 255.047 560 225.5 560C195.953 560 172 536.271 172 507C172 477.729 195.953 454 225.5 454C255.047 454 279 477.729 279 507Z" fill="#455A64"/>
+      </g>
+      <g id="wheel2" filter="url(#filter3_i_0_1)">
+      <path id="Vector_5" d="M491 507C491 536.271 467.495 560 438.5 560C409.505 560 386 536.271 386 507C386 477.729 409.505 454 438.5 454C467.495 454 491 477.729 491 507Z" fill="#455A64"/>
+      </g>
+      </g>
+      </g>
+      <defs>
+      <filter id="filter0_f_0_1" x="121.124" y="153" width="403.876" height="215" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="2" result="effect1_foregroundBlur_0_1"/>
+      </filter>
+      <filter id="filter1_i_0_1" x="41" y="91" width="456" height="343" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_1"/>
+      </filter>
+      <filter id="filter2_i_0_1" x="172" y="454" width="107" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_1"/>
+      </filter>
+      <filter id="filter3_i_0_1" x="386" y="454" width="105" height="110" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="2"/>
+      <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+      <feBlend mode="normal" in2="shape" result="effect1_innerShadow_0_1"/>
+      </filter>
+      </defs>
+      </svg>
+      
+      
+  <style>
+          #cartSvg:hover #greenCircle{
+              transition: all 2s ease;
+              fill: rgb(255, 0, 47);
+              
+          } 
+          #cartSvg:hover #cross1 {
+              transition: all 2s ease;
+              stroke:none;
+              
+              
+          } 
+          #cartSvg:hover #cross2 {
+              transition: all 2s ease;
+              stroke:none;
+              
+              
+          } 
+      
+           #cartSvg:hover #tick {
+              transition: all 2s ease;
+              stroke:white;  }    
+
+
+       
+           
+          
+
+      </style>
+  </button>
+
+ 
+
+
+
+<div class="progress-bar " slot="progress-bar">
+    <div class="update-bar"></div>
+</div>
+<div slot="ar-button" style="
+
+    height: 38px;
+    position: relative;
+    top: 16px;
+    width: 77px;
+    right: -290px;" >
+                        <object  style="pointer-events: none;" type="image/svg+xml" data="./assets/Arphone.svg"  ></object>
+                    
+                    </div>
+ <button  id="toggel" style=" object-fit: contain;
+ background-image: url(./assets/3d-model.png); background-size: cover; background-repeat: no-repeat;
+ height:50px; width:50px; border-radius:  70px; border:10px ; position: absolute; top: 6px; left:7px; padding:2px;"> 
+ 
+</button>
+</button>
+
+    
+
+
+</div>
+       
+      
+      
+        <div class="slider">
+          <div class="slides">
+          </button><button class="slide" onclick="switchSrc(this, 'm1')" style="background-image: url('assets/m1.webp');">
+
+          </button><button class="slide" onclick="switchSrc(this, 'm2')" style="background-image: url('assets/m2.webp');">
+          
+            </button><button class="slide" onclick="switchSrc(this, 'm3')" style="background-image: url('assets/m3.webp');">
+         
+            </button><button class="slide" onclick="switchSrc(this, 'm4')" style="background-image: url('assets/m4.webp');">    
+            </button>
+
+          </button><button class="slide" onclick="switchSrc(this, 'm5')" style="background-image: url('assets/m5.webp');">    
+          </button>
+
+          </button><button class="slide" onclick="switchSrc(this, 'm6')" style="background-image: url('assets/m6.webp');"></button>
+
+         </button><button class="slide" onclick="switchSrc(this, 'm7')" style="background-image: url('assets/m7.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm8')" style="background-image: url('assets/m8.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm9')" style="background-image: url('assets/m9.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm10')" style="background-image: url('assets/m10.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm11')" style="background-image: url('assets/m11.webp');">    
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm12')" style="background-image: url('assets/m12.webp');">     
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm13')" style="background-image: url('assets/m13.webp');">     
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm14')" style="background-image: url('assets/m14.webp');">     
+         </button>
+         </button><button class="slide" onclick="switchSrc(this, 'm15')" style="background-image: url('assets/m15.webp');">     
+          </button>
+      
+        
+        </div>
+        </div>
+      </model-viewer>
+    
+      
+      <script type="module">
+
+        var twoD = false;  
+       const modelViewer = document.querySelector("model-viewer");
+       const orederBTN = document.getElementById("orderBtn");
+       const addCartBTN = document.getElementById("addCart");
+         
+       let clk = document.getElementById("toggel");
+        clk.addEventListener("click",function loader(){ 
+ 
+       if (twoD == false){
+         twoD = true;
+         modelViewer.dismissPoster();
+         clk.style.backgroundImage ="url(./assets/2d.png)";
+         orederBTN.style.top=null;
+         orederBTN.style.bottom="120px";
+         orederBTN.style.height="75px"
+         orederBTN.style.width="275px"
+         orederBTN.style.left="70px"
+         addCartBTN.style.top=null;
+         addCartBTN.style.left="10px";
+         addCartBTN.style.bottom="128px";
+         addCartBTN.style.height="68px"
+         addCartBTN.style.width="68px"
+       
+         return;
+        }
+       if(twoD){
+         twoD = false;
+         modelViewer.showPoster()
+         clk.style.backgroundImage ="url(./assets/3d-model.png)";
+         orederBTN.style.top="75px";
+         orederBTN.style.bottom=null;
+         orederBTN.style.height="55px"
+         orederBTN.style.width="200px"
+         orederBTN.style.left="47px" 
+                 
+         addCartBTN.style.top="70px";
+        
+         addCartBTN.style.left="236px";
+         addCartBTN.style.bottom=null;
+         return;
+       }
+
+      });
+
+      localStorage.setItem("CurrentItem",'IDK');
+        window.switchSrc = (element, name) => {
+          const base = "assets/" + name;
+          modelViewer.src = base + '.glb';
+          modelViewer["ios-src"] = base + "usdz";
+          const  post2 = base+ '002'+ '.webp';
+          const cycle = document.getElementById('viewer');
+          cycle.setAttribute('poster',post2);
+          const slides = document.querySelectorAll(".slide");
+          slides.forEach((element) => {element.classList.remove("selected"); });
+          element.classList.add("selected");
+          localStorage.setItem("CurrentItem",post2);
+        
+        };
+       
+        document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+          // Keep slider interactions from affecting the XR scene.
+          ev.preventDefault(); 
+        });
+    
+
+
+        
+      </script>
+      <script>
+       localStorage.setItem("chosenDesigns","[]");   
+       const cart = document.getElementById("addCart");
+       cart.addEventListener("click",function cartguy(){
+        
+        
+        console.log(localStorage.getItem("CurrentItem"));
+        const paper = localStorage.getItem("CurrentItem").toString() ;
+        
+        var oldData = JSON.parse(localStorage.getItem('chosenDesigns'));
+        oldData.push(paper);
+        localStorage.setItem("chosenDesigns",JSON.stringify(oldData));
+
+        })
+      </script>
+      
+      <style>
+        /* This keeps child nodes hidden while the element loads */
+        :not(:defined) > * {
+          display: none;
+        }
+     
+     
+     
+
+
+
+
+
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  model-viewer > #ar-failure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 175px;
+    display: none;
+  }
+
+  model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+    display: block;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: -6px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:whitesmoke;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    
+  }
+
+  .slide.selected {
+    border: 4px solid skyblue;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 4px solid skyblue ;
+  }
+
+</style>
+      
+      </style>
+       <style>
+        model-viewer{
+          width: 100%;
+          min-height:700px;
+         
+        }
+      </style>
+      
+  <div>
+    <footer>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <p style=" font-weight:bold; color:black;  background-color:white; border-radius:5px; height:20px ;position: relative;text-align: center;">About Us & PrivacyPolicy</p>
+  
+           <h6 style=" color:white;text-decoration: dashed; font-size: 13px;">
+            Our website Handels immersive computing and shows 3d Wallpapers from our shop to your walls.</h6>
+            <p>--click here to know more-- </p>
+           
+          </div>
+          <div class="flip-card-back">
+            <p> we have tried to showcase our 3d Wallpapers  by the medium of Roomify.com a website made by amazing people like you , who want to decorate there Houses Passionately  .
+               you can also visit our social media handels for more interesting stuff<p>
+  
+            <ul>
+             <li>
+              <a href="https://www.instagram.com/prokarticksharma/"> Instagram</a>
+  
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+      </div>
+      </footer>
+ <style>
+   
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 7rem;
+ 
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+  background-color:#7900FF; 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+
+ 
+  margin-top: 1rem;
+}
+
+
+
+
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+ </style>
+  </div>
+</main>
+<style>
+  @media all and (min-width: 500px) {
+  
+  .spacer{
+    aspect-ratio:3/4;
+           width: 100%;
+           background-size:cover;
+           background-repeat: no-repeat;
+           background-position:center;
+
+  }
+  .layer{
+           background-image: url(./assets/blob34.svg);
+       }
+   #viewer{
+     height:950px;
+   } 
+   #object1{
+     height: 800px;;
+   }   
+}
+
+  @media all and (min-width: 900px) {
+  
+  .spacer{
+    aspect-ratio:16/9;
+           width: 100%;
+           background-size:cover;
+           background-repeat: no-repeat;
+           background-position:center;
+
+  }
+  .layer{
+           background-image: url(./assets/blob169.svg);
+       }
+   #viewer{
+     height:900px;
+   } 
+   #object1{
+     height: 600px;;
+   }   
+}
+</style>
+   
+</body>
+</html>
