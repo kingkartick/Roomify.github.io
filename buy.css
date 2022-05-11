@@ -1,0 +1,43 @@
+.form-group {
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    }
+    
+    .form-group input {
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    color: tomato;
+    display: block;
+    font-size: 16px;
+    width: 91%;
+    outline-color:#51cccc!important;
+    border: solid ;
+    border-color:#51cccc!important ;
+    border-radius:7px; 
+    }
+    
+    .form-group label {
+    color: #9e9e9e;
+    font-size: 16px;
+    font-weight: 100;
+    position:relative;
+    top:-46px;
+    left: 20px;
+    }
+    
+    
+    
+    
+    .form-group input:valid+label,
+    .form-group input:focus + label {
+    color: #51cccc!important;
+    font-size: 18px;
+    top: -78px;
+    left: 20px;
+    background-color: white;
+    }
+    
+    .form-group label {
+    transition: all 0.2s ease-in-out;
+    }

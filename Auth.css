@@ -1,0 +1,142 @@
+#cart{
+    width:90%; height:auto;   padding-left:1rem; border-color: #111; border:solids;
+
+  }
+  #tuty1{
+    width:90%; height:auto; padding-left:1rem; border-color:#51cccc; border-style: solid; border-radius: 5px;
+  }
+  #Tutorial{
+    color:#463b3a
+          ; font-weight: 500;
+            font-family: 'Source Sans Pro', sans-serif;
+            padding: 1rem;
+  }
+  @media all and (max-width: 500px) {
+    #orderd{
+    color: black; font-family: 'Ubuntu', sans-serif; padding: 13px;
+      }
+  #fireData{
+    height:auto; width:100%;   margin:23px;  font-weight: bold;
+                  font-family: 'Source Sans Pro', sans-serif;display:grid;
+                  gap: 49px;
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+    
+
+
+   }
+   .boxer{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   }
+   .ImG{
+     height: 80px;
+     width: 60px;
+     margin:8px;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   }
+  
+  
+  }
+
+  @media all and (min-width: 500px) {
+    #cartObject{
+      height: 800px;
+      
+    }
+    #cart{
+      height: 500px;
+      overflow: hidden
+    }
+
+    .button-75{
+      height:80px;
+      width: 250px;
+      position: absolute;
+     top: 44rem;
+     
+    }
+    #Tutorial{
+    font-size: x-large;
+  }
+  #tuty1{
+    width:90%; height:auto; padding-left:1rem;
+  }
+  #orderd{
+    color: black; font-family: 'Ubuntu', sans-serif; padding: 13px;
+  }
+  #fireData{
+    height:auto; width:100%;   margin:23px;  font-weight: bold;
+                  font-family: 'Source Sans Pro', sans-serif;display:grid;
+                  gap: 49px;
+    grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+
+
+
+                 
+                 
+                  
+  }
+  .boxer{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   }
+
+   .ImG{
+     height: 170px;
+     width: 150px;
+     margin:18px;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   }
+  
+   
+}
+
+  @media all and (min-width: 900px) {
+    #cartObject{
+      height: 500px;
+      
+
+    }
+    #cart{
+      height:450px;
+      
+      
+    }
+
+   
+    .button-75{
+      height:80px;
+      width: 250px;
+      position: absolute;
+     top: 50rem;
+     
+    }
+
+    #tuty1{
+      width:90%; height:90%; padding-left:1rem;
+    }
+   
+      #Tutorial{
+    font-size: xx-large;
+  }
+  #orderd{
+    color: black; font-family: 'Ubuntu', sans-serif; padding: 13px;
+  }
+  #fireData{
+    height:auto; width:100%;   margin:23px;  font-weight: bold;
+                  font-family: 'Source Sans Pro', sans-serif;display:grid;
+                  gap: 49px;
+    grid-template-columns: repeat(auto-fit,minmax(14rem,1fr));
+
+  }
+  .boxer{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   }
+
+   .ImG{
+     height: 170px;
+     width: 150px;
+     margin:18px;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   }
+  
+  }
+  

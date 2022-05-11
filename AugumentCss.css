@@ -1,0 +1,231 @@
+
+.spacer{
+    aspect-ratio:9/17;
+    width: 100%;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center;
+   
+   
+}
+.layer{
+    background-image: url(./assets/blob-scene-haikei\ \(1\).svg);
+}
+
+
+
+
+#cartSvg:hover #greenCircle{
+    transition: all 2s ease;
+    fill: rgb(255, 0, 47);
+    
+} 
+#cartSvg:hover #cross1 {
+    transition: all 2s ease;
+    stroke:none;
+    
+    
+} 
+#cartSvg:hover #cross2 {
+    transition: all 2s ease;
+    stroke:none;
+    
+    
+} 
+
+ #cartSvg:hover #tick {
+    transition: all 2s ease;
+    stroke:white;  }    
+
+
+
+ 
+ /* This keeps child nodes hidden while the element loads */
+ :not(:defined) > * {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+@keyframes circle {
+from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes elongate {
+from { transform: translateX(100px); }
+to   { transform: translateX(-100px); }
+}
+
+model-viewer > #ar-prompt {
+position: absolute;
+left: 50%;
+bottom: 175px;
+animation: elongate 2s infinite ease-in-out alternate;
+display: none;
+}
+
+model-viewer[ar-status="session-started"] > #ar-prompt {
+display: block;
+}
+
+model-viewer > #ar-prompt > img {
+animation: circle 4s linear infinite;
+}
+
+model-viewer > #ar-failure {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+bottom: 175px;
+display: none;
+}
+
+model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+display: block;
+}
+
+.slider {
+width: 100%;
+text-align: center;
+overflow: hidden;
+position: absolute;
+bottom: -6px;
+}
+
+.slides {
+display: flex;
+overflow-x: auto;
+scroll-snap-type: x mandatory;
+scroll-behavior: smooth;
+-webkit-overflow-scrolling: touch;
+}
+
+.slide {
+scroll-snap-align: start;
+flex-shrink: 0;
+width: 100px;
+height: 100px;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+background-color:whitesmoke;
+margin-right: 10px;
+border-radius: 10px;
+border: none;
+display: flex;
+
+}
+
+
+.slide.selected {
+border: 4px solid skyblue;
+}
+
+.slide:focus {
+outline: none;
+}
+
+.slide:focus-visible {
+outline: 4px solid skyblue ;
+}
+model-viewer{
+    width: 100%;
+    min-height:700px;
+   
+  }
+
+    
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 7rem;
+   
+  
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  
+  }
+  
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .flip-card-front, .flip-card-back {
+    background-color:#7900FF; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  
+   
+    margin-top: 1rem;
+  }
+  
+  
+  
+  
+  .flip-card-back {
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+
+  @media all and (min-width: 500px) {
+  
+    .spacer{
+      aspect-ratio:3/4;
+             width: 100%;
+             background-size:cover;
+             background-repeat: no-repeat;
+             background-position:center;
+  
+    }
+    .layer{
+             background-image: url(./assets/blob34.svg);
+         }
+     #viewer{
+       height:950px;
+     } 
+     #object1{
+       height: 800px;;
+     }   
+  }
+  
+    @media all and (min-width: 900px) {
+    
+    .spacer{
+      aspect-ratio:16/9;
+             width: 100%;
+             background-size:cover;
+             background-repeat: no-repeat;
+             background-position:center;
+  
+    }
+    .layer{
+             background-image: url(./assets/blob169.svg);
+         }
+     #viewer{
+       height:900px;
+     } 
+     #object1{
+       height: 600px;;
+     }   
+  }
