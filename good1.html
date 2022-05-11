@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script scrc="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+
+</head> 
+ <div id="loadin" style=" display: flex; justify-content: center; align-items: center; width:100%; height:100vh; flex-direction: column ">
+    <p> Roomify.in</p> 
+    <p>
+            Making Walls look Good !s
+        </p>
+        <object type="image/svg+xml" data="./assets/mainLoader.svg"></object>
+       
+    </div>
+   
+<body id="bigBody">  
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, ut! Neque, reiciendis molestias ab placeat id magnam ratione molestiae, culpa nulla doloremque minima hic dignissimos veniam! Ipsum cupiditate ipsa id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ducimus porro consequuntur quo expedita minus nisi omnis aspernatur neque, nihil error, libero dolores qui laborum labore voluptates iste. Iure, recusandae!
+        lorm
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, deserunt non repudiandae eum dolorum dolorem repellat officiis odit doloribus quasi porro aperiam magni aliquid dolore exercitationem velit voluptas alias quisquam.
+    </p>   
+    
+  
+</body>
+<script>
+    const body = document.getElementById("bigBody");
+    const loader = document.getElementById("loadin")
+    body.onload= function loding(){
+        
+    setTimeout(function()
+    {
+     loader.style.display="none";
+
+    }, 3000);
+     
+      
+        
+    }
+</script>
+</html>

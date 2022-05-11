@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <div style="color: black; font-family: 'Ubuntu', sans-serif; padding: 13px;">
+        Check Order Summary here 
+          
+           <div class="form-group">
+             <div class="form-group">
+               <div style="
+                   border: solid;
+                   border-color: #51cccc!important;
+                   border-radius: 87px;
+                   height: 38px;
+                   position: relative;
+                   top: 57px;
+                   width: 35px;
+                   left: -41px;">
+                 <object type="image/svg+xml" data="./assets/userpro.svg"></object>
+             
+             </div>
+             <input type="text" required class="input" id="Contact" type="number"  />
+             <label>Registered number.</label>
+         </div> 
+         <button class="button-52" id="submit">check order</button>
+           <div style="height:auto;width:fit-content; border-style: solid;  margin:23px; border-color:#51cccc!important; font-weight: bold;
+           font-family: 'Source Sans Pro', sans-serif;
+           color:#51cccc!important; border:solid;"   id="fireData">
+            
+           </div>
+          
+       </div> 
+      
+
+    
+ </div>
+
+
+
+
+
+
+    <script type="module" > 
+        const cart = document.getElementById("cart");
+       
+        const cartElement = document.getElementById("cartItems");
+        const cartlist = localStorage.getItem("chosenDesigns");
+        const cartArray = JSON.parse(cartlist);
+        console.log(cartArray);
+        console.log(cartArray.length);
+        var i = 0;
+        const tut = document.getElementById("Tutorial");
+        for(const ele of cartArray){
+          var img =document.createElement("IMG");
+          img.style.height="95px";
+          img.style.width="85px";
+          img.style.padding="10px"
+          img.setAttribute("src",ele);
+          tut.style.display="none";
+          cart.append(img);  
+        }
+     
+       
+        
+
+     
+  
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+        import { getDatabase ,ref,onValue } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+            
+          const firebaseConfig = {
+                     apiKey: "AIzaSyDnJvHGINzFRY4Tbv3KPUL5G7-RPasbK9Q",
+                     authDomain: "roomy2-8afff.firebaseapp.com",
+                     databaseURL: "https://roomy2-8afff-default-rtdb.asia-southeast1.firebasedatabase.app",
+                     projectId: "roomy2-8afff",
+                     storageBucket: "roomy2-8afff.appspot.com",
+                     messagingSenderId: "519049376654",
+                     appId: "1:519049376654:web:c50a78b952cbd22f66aadf",
+                    measurementId: "G-F1XQKD5GMX"
+                               };
+                
+                // Initialize Firebase
+                
+                
+               let clk = document.getElementById("submit");
+               clk.addEventListener('click',
+               function showData(){
+                   if(document.getElementById("Contact")){var num= document.getElementById("Contact").value;} else {console.log("error")}
+                   const app = initializeApp(firebaseConfig);
+                   const db = getDatabase(app);
+                   const reference = ref(db,'Users/');
+                   onValue(reference,(snapshot) => {
+                    var  data = snapshot.child(num).val();
+                    var Keys = Object.keys(data);
+                    console.log(Keys.length);
+                    var i = 0 ;
+                    const orderlist = document.getElementById("fireData");
+                    const bigbody = document.getElementById("bigBody");
+                   
+                   
+
+                   for(const key of Keys){
+                      if(key.includes("name")){
+                        
+                       var Name =(key+"="+data[key])+",";
+                       orderlist.append(Name);
+                       
+                     }
+                     
+                     if (key.includes("City")){
+                       var City = (key+"="+data[key])+",";
+                       orderlist.append(City);
+                      
+                     }
+                       if(key.includes("wall")){
+                          var currentWall = key;
+                          orderlist.append(currentWall);
+                         var walldata = data[key];
+                         const diver = document.createElement("div");
+                         const order = document.createElement("ol");
+                         for(var ele in walldata){
+                           if(ele.includes("Texture") && walldata[ele] !== "notSelected"){
+                            
+                              var img =document.createElement("IMG");
+                              img.setAttribute("class",i+"texture");
+                              img.style.height="95px";
+                              img.style.width="85px";
+                              img.style.padding="10px";
+                              img.setAttribute("src",walldata[ele]);
+                              order.append(img);
+                              
+                           
+                           }
+                           
+                            var atr = (ele+"="+walldata[ele]);
+                            const listing = document.createElement("li");
+                            listing.append(atr);
+                            order.append(listing); 
+                            diver.append(order)
+                            
+                         }   
+                           orderlist.append(diver);
+                           bigbody.style.height="1500px";
+
+                       }
+                       
+                   } 
+                     
+                                
+                   })
+
+  })
+
+               
+
+  
+     
+      </script>
+
+<style>
+
+    .button-52 {
+        color:#c7d2fe;
+        top: -1px;
+        width: 193px;
+        font-size: 16px;
+        font-weight: 200;
+        letter-spacing: 1px;
+        padding: 13px 20px 13px;
+        outline: 0;
+        border: 2px solid black;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+      
+      .button-52:after {
+        content: "";
+        background-color:#6366f1;
+       
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+      }
+      
+      .button-52:hover:after {
+        top: 0px;
+        left: 0px;
+      }
+      
+      @media (min-width: 768px) {
+        .button-52 {
+          padding: 13px 50px 13px;
+        }
+      }
+      
+    
+    
+    </style>
+    <style>
+        .form-group {
+      position: relative;
+      
+      top: -16px;
+      width: 300px;
+      max-width: 100%;
+      }
+      
+      .form-group input {
+      border: none;
+      border-bottom: 1px solid #9e9e9e;
+      color: tomato;
+      display: block;
+      font-size: 16px;
+      padding: 10px 0;
+      width: 100%;
+      outline-color:#51cccc!important;
+      border: solid ;
+      border-color:#51cccc!important ;
+      border-radius:7px; 
+      }
+      
+      .form-group label {
+      color: #9e9e9e;
+      font-size: 16px;
+      font-weight: 100;
+      position:relative;
+      top:-46px;
+      left: 20px;
+      }
+      
+      
+      
+      
+      .form-group input:valid+label,
+      .form-group input:focus + label {
+      color: #51cccc!important;
+      font-size: 18px;
+      top: -78px;
+      left: 20px;
+      background-color: white;
+      }
+      
+      .form-group label {
+      transition: all 0.2s ease-in-out;
+      }
+      </style>
+
+    
+</body>
+</html>
