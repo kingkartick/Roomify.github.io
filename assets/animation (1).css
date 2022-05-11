@@ -1,0 +1,492 @@
+/*
+The CSS export should solely be used as a reference.
+For a more detailed animation export the JSON file should be used.
+*/
+#cross2 {
+    transform: translateX(-50%) translateY(-50%);
+    animation: cross2__x__1 303ms 0ms linear forwards, cross2__x__2 697ms 303ms linear forwards, cross2__x__3 1400ms 1000ms linear forwards, cross2__x__4 603ms 2400ms linear forwards, cross2__y__1 303ms 0ms linear forwards, cross2__y__2 697ms 303ms linear forwards, cross2__y__3 1400ms 1000ms linear forwards, cross2__y__4 603ms 2400ms linear forwards, cross2__width__1 303ms 0ms linear forwards, cross2__width__2 699ms 303ms linear forwards, cross2__width__3 1398ms 1002ms linear forwards, cross2__width__4 603ms 2400ms linear forwards, cross2__height__1 303ms 0ms linear forwards, cross2__height__2 697ms 303ms linear forwards, cross2__height__3 1400ms 1000ms linear forwards, cross2__height__4 603ms 2400ms linear forwards, cross2__opacity__1 303ms 0ms linear forwards, cross2__opacity__2 697ms 303ms linear forwards, cross2__opacity__3 1400ms 1000ms linear forwards, cross2__opacity__4 603ms 2400ms linear forwards, cross2__rotation__1 303ms 0ms linear forwards, cross2__rotation__2 699ms 303ms linear forwards, cross2__rotation__3 1398ms 1002ms linear forwards, cross2__rotation__4 603ms 2400ms linear forwards, cross2__fillColor__1 303ms 0ms linear forwards, cross2__fillColor__2 1199ms 303ms linear forwards, cross2__strokeWidth__1 303ms 0ms linear forwards, cross2__strokeColor__1 303ms 0ms linear forwards;
+}
+
+@keyframes cross2__x__1 {
+    from {
+        left: 402.9985px;
+    }
+
+    to {
+        left: 402.9985px;
+    }
+}
+@keyframes cross2__x__2 {
+    from {
+        left: 402.9985px;
+    }
+
+    to {
+        left: 370px;
+    }
+}
+@keyframes cross2__x__3 {
+    from {
+        left: 370px;
+    }
+
+    to {
+        left: 365px;
+    }
+}
+@keyframes cross2__x__4 {
+    from {
+        left: 365px;
+    }
+
+    to {
+        left: 402.9985px;
+    }
+}
+@keyframes cross2__y__1 {
+    from {
+        top: 116.8113px;
+    }
+
+    to {
+        top: 116.8113px;
+    }
+}
+@keyframes cross2__y__2 {
+    from {
+        top: 116.8113px;
+    }
+
+    to {
+        top: 145px;
+    }
+}
+@keyframes cross2__y__3 {
+    from {
+        top: 145px;
+    }
+
+    to {
+        top: 145px;
+    }
+}
+@keyframes cross2__y__4 {
+    from {
+        top: 145px;
+    }
+
+    to {
+        top: 116.8113px;
+    }
+}
+@keyframes cross2__width__1 {
+    from {
+        width: 1.62298583984375px;
+    }
+
+    to {
+        width: 1.6230000257492065px;
+    }
+}
+@keyframes cross2__width__2 {
+    from {
+        width: 1.6230000257492065px;
+    }
+
+    to {
+        width: 1.6230000257492065px;
+    }
+}
+@keyframes cross2__width__3 {
+    from {
+        width: 1.6230000257492065px;
+    }
+
+    to {
+        width: 1.6230000257492065px;
+    }
+}
+@keyframes cross2__width__4 {
+    from {
+        width: 1.6230000257492065px;
+    }
+
+    to {
+        width: 1.62298583984375px;
+    }
+}
+@keyframes cross2__height__1 {
+    from {
+        height: 86.00340270996094px;
+    }
+
+    to {
+        height: 86.00340270996094px;
+    }
+}
+@keyframes cross2__height__2 {
+    from {
+        height: 86.00340270996094px;
+    }
+
+    to {
+        height: 55px;
+    }
+}
+@keyframes cross2__height__3 {
+    from {
+        height: 55px;
+    }
+
+    to {
+        height: 55px;
+    }
+}
+@keyframes cross2__height__4 {
+    from {
+        height: 55px;
+    }
+
+    to {
+        height: 86.00340270996094px;
+    }
+}
+@keyframes cross2__opacity__1 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross2__opacity__2 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross2__opacity__3 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross2__opacity__4 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross2__rotation__1 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(-80deg);
+    }
+}
+@keyframes cross2__rotation__2 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(-80deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(-151deg);
+    }
+}
+@keyframes cross2__rotation__3 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(-151deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(-151deg);
+    }
+}
+@keyframes cross2__rotation__4 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(-151deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+}
+@keyframes cross2__fillColor__1 {
+    from {
+        background-color: rgba(0,0,0,1);
+    }
+
+    to {
+        background-color: rgba(0,0,0,1);
+    }
+}
+@keyframes cross2__fillColor__2 {
+    from {
+        background-color: rgba(0,0,0,1);
+    }
+
+    to {
+        background-color: rgba(0,0,0,1);
+    }
+}
+@keyframes cross2__strokeWidth__1 {
+    from {
+        border-width: 20px;
+    }
+
+    to {
+        border-width: 20px;
+    }
+}
+@keyframes cross2__strokeColor__1 {
+    from {
+        border-color: rgba(229.00000154972076,229.00000154972076,229.00000154972076,1);
+    }
+
+    to {
+        border-color: rgba(229.00000154972076,229.00000154972076,229.00000154972076,1);
+    }
+}
+
+#cross1 {
+    transform: translateX(-50%) translateY(-50%);
+    animation: cross1__x__1 303ms 0ms linear forwards, cross1__x__2 699ms 303ms linear forwards, cross1__x__3 1398ms 1002ms linear forwards, cross1__x__4 599ms 2400ms linear forwards, cross1__y__1 303ms 0ms linear forwards, cross1__y__2 700ms 303ms linear forwards, cross1__y__3 1397ms 1003ms linear forwards, cross1__y__4 601ms 2400ms linear forwards, cross1__width__1 303ms 0ms linear forwards, cross1__width__2 703ms 303ms linear forwards, cross1__width__3 1394ms 1006ms linear forwards, cross1__width__4 602ms 2400ms linear forwards, cross1__height__1 303ms 0ms linear forwards, cross1__height__2 704ms 303ms linear forwards, cross1__height__3 1393ms 1007ms linear forwards, cross1__height__4 601ms 2400ms linear forwards, cross1__opacity__1 303ms 0ms linear forwards, cross1__opacity__2 705ms 303ms linear forwards, cross1__opacity__3 1392ms 1008ms linear forwards, cross1__opacity__4 600ms 2400ms linear forwards, cross1__rotation__1 303ms 0ms linear forwards, cross1__rotation__2 709ms 303ms linear forwards, cross1__rotation__3 1388ms 1012ms linear forwards, cross1__rotation__4 601ms 2400ms linear forwards, cross1__fillColor__1 303ms 0ms linear forwards;
+}
+
+@keyframes cross1__x__1 {
+    from {
+        left: 403.0965px;
+    }
+
+    to {
+        left: 408px;
+    }
+}
+@keyframes cross1__x__2 {
+    from {
+        left: 408px;
+    }
+
+    to {
+        left: 425px;
+    }
+}
+@keyframes cross1__x__3 {
+    from {
+        left: 425px;
+    }
+
+    to {
+        left: 427px;
+    }
+}
+@keyframes cross1__x__4 {
+    from {
+        left: 427px;
+    }
+
+    to {
+        left: 403.0965px;
+    }
+}
+@keyframes cross1__y__1 {
+    from {
+        top: 117.5005px;
+    }
+
+    to {
+        top: 117.5005px;
+    }
+}
+@keyframes cross1__y__2 {
+    from {
+        top: 117.5005px;
+    }
+
+    to {
+        top: 137px;
+    }
+}
+@keyframes cross1__y__3 {
+    from {
+        top: 137px;
+    }
+
+    to {
+        top: 137px;
+    }
+}
+@keyframes cross1__y__4 {
+    from {
+        top: 137px;
+    }
+
+    to {
+        top: 117.5005px;
+    }
+}
+@keyframes cross1__width__1 {
+    from {
+        width: 84.0009765625px;
+    }
+
+    to {
+        width: 84.0009994506836px;
+    }
+}
+@keyframes cross1__width__2 {
+    from {
+        width: 84.0009994506836px;
+    }
+
+    to {
+        width: 88px;
+    }
+}
+@keyframes cross1__width__3 {
+    from {
+        width: 88px;
+    }
+
+    to {
+        width: 88px;
+    }
+}
+@keyframes cross1__width__4 {
+    from {
+        width: 88px;
+    }
+
+    to {
+        width: 84.0009765625px;
+    }
+}
+@keyframes cross1__height__1 {
+    from {
+        height: 0.8069992065429688px;
+    }
+
+    to {
+        height: 45px;
+    }
+}
+@keyframes cross1__height__2 {
+    from {
+        height: 45px;
+    }
+
+    to {
+        height: 45px;
+    }
+}
+@keyframes cross1__height__3 {
+    from {
+        height: 45px;
+    }
+
+    to {
+        height: 50px;
+    }
+}
+@keyframes cross1__height__4 {
+    from {
+        height: 50px;
+    }
+
+    to {
+        height: 0.8069992065429688px;
+    }
+}
+@keyframes cross1__opacity__1 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross1__opacity__2 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross1__opacity__3 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross1__opacity__4 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes cross1__rotation__1 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+}
+@keyframes cross1__rotation__2 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(65deg);
+    }
+}
+@keyframes cross1__rotation__3 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(65deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(65deg);
+    }
+}
+@keyframes cross1__rotation__4 {
+    from {
+        transform: translateX(-50%) translateY(-50%) rotate(65deg);
+    }
+
+    to {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+}
+@keyframes cross1__fillColor__1 {
+    from {
+        background-color: rgba(0,0,0,1);
+    }
+
+    to {
+        background-color: rgba(0,0,0,1);
+    }
+}
